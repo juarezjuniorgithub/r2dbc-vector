@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.dev.jdbc</groupId>
+  <artifactId>r2dbc-vector</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>r2dbc-vector</name>
+  <description>Unleashing the Power of Vector Data Types with Oracle R2DBC:
+    Accelerating Generative AI Solutions with Reactive Streams and the Oracle
+    Database</description>
+  <url>
+    https://medium.com/oracledevs/unleashing-the-power-of-vector-data-types-with-oracle-r2dbc-accelerating-generative-ai-solutions-bed4f984e67d</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>25</maven.compiler.release>
+    <jdbc.version>23.26.2.0.0</jdbc.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.database.r2dbc</groupId>
+      <artifactId>oracle-r2dbc</artifactId>
+      <version>1.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.8.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc17</artifactId>
+      <version>${jdbc.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Java Compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+      <!-- Run Java Main Classes -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+          <mainClass>com.oracle.dev.jdbc.r2dbc.R2dbcVectorDemo</mainClass>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
